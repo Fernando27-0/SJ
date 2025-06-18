@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Una pequeña carta desde mi alma y corazón💖</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="theme-color" content="#e91e63" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/833/833472.png" />
+  <style>
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>Mi Jhade c: 💌</h1>
+      <p>
+        Te dejo esta carta desde el fondo de mi corazón eres increíble y me gusta el tiempo que pasamos juntos 
+        cuando nos reímos, conversamos de todo lo que nos gusta y quiero darte todo. Como nos miramos siempre 
+        simplemente me encanta tu mirada❤️ y nos damos besos con tanto amor. Siento esa conexión contigo y no 
+        quiero que se acabe nunca eres mi niña chiquita y espero quererte y demostrarte mis intenciones y sentimientos 
+        darte todo lo que mereces y que me demuestres te quiero mucho mucho muchísimooo de verdad te quiero y quiero que seas 
+        parte de mi vida❤️🥰.
+        Y como dijo Mario Benedetti
+        "Ella me daba la mano y no hacía falta más. Me alcanzaba para sentir que era bien acogido. Más que besarla… más que ninguna otra cosa, ella me daba la mano y eso era amor."<span class="heart">❤️</span>
+      </p>
+      <button class="btn" onclick="mostrarCorazones()">Clic</button>
+    </div>
+  </div>
+
+  <script>
+    function mostrarCorazones() {
+      for (let i = 0; i < 10; i++) {
+        const heart = document.createElement("div");
+        heart.classList.add("floating-heart");
+        heart.innerHTML = "❤️";
+
+        const left = Math.random() * window.innerWidth;
+        heart.style.left = `${left}px`;
+        heart.style.top = `${window.innerHeight - 100}px`;
+        heart.style.fontSize = `${Math.random() * 20 + 20}px`;
+
+        document.body.appendChild(heart);
+
+        setTimeout(() => {
+          heart.remove();
+        }, 3000);
+      }
+    }
+
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log("SW registrado 🎉"))
+        .catch(err => console.error("SW error", err));
+    }
+  </script>
+</body>
+</html>
